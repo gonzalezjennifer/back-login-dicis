@@ -1,9 +1,17 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 require('dotenv').config()
 
 const app = express()
+
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
 
 // capturar el body
 app.use(bodyParser.urlencoded({
